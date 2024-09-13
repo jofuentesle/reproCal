@@ -13,6 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import ImgProfile from "../assets/images/SobremesaHome.jpg";
+import { Image } from "astro:assets"
 
 const metadata = {
   title: 'Calendarios para empresas',
@@ -34,9 +35,10 @@ const metadata = {
       },
     
     ]}
-    image={{ src: 'ImgProfile', alt: 'AstroWind Hero Image' }}
+    image={{ src: ImgProfile, alt: 'AstroWind Hero Imageasfasfas' }}
   >
-      <img src={ImgProfile.src} alt="test"/>
+  
+  <Image src={ImgProfile} alt="resrsrse"/>
 
 
   <Fragment slot="title">
@@ -123,8 +125,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: ImgProfile.src,
+      alt: 'Imagen de calendarios de mesa',
     }}
   >
     <Fragment slot="content">
