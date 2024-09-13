@@ -12,6 +12,8 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+import ImgProfile from "../assets/images/SobremesaHome.jpg";
+
 const metadata = {
   title: 'Calendarios para empresas',
   ignoreTitleTemplate: true,
@@ -32,9 +34,11 @@ const metadata = {
       },
     
     ]}
-    image={{ src: '/hero-image.png', alt: 'AstroWind Hero Image' }}
+    image={{ src: 'ImgProfile', alt: 'AstroWind Hero Image' }}
   >
-  <p>hola mundo</p>  
+      <img src={ImgProfile.src} alt="test"/>
+
+
   <Fragment slot="title">
       Calendarios de <span class="hidden xl:inline">empresas</span>, la
       <span class="text-accent dark:text-white highlight"> publicidad mas efectiva</span> 365 días al año.
