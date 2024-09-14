@@ -12,7 +12,17 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import ImgProfile from "../assets/images/SobremesaHome.jpg";
+import ImgProfile from "../assets/images/Calendarios.png";
+import ImgTbl from '../assets/images/mesa/SobremesaHome.jpg';
+import ImgTbl0 from '../assets/images/mesa/SobremesaEspiral.jpg';
+import ImgTbl1 from '../assets/images/mesa/SobremesaEspiral1.jpg';
+import ImgTbl2 from '../assets/images/mesa/SobremesaEspiral2.jpg';
+import ImgTbl3 from '../assets/images/mesa/SobremesaEspiral3.jpg';
+import ImgWll from '../assets/images/pared/ParedHome.jpg';
+import ImgWll0 from '../assets/images/pared/ParedEspiral.jpg';
+import ImgWll1 from '../assets/images/pared/ParedEspiral1.jpg';
+import ImgWll2 from '../assets/images/pared/ParedEspiral2.jpg';
+import ImgWll3 from '../assets/images/pared/ParedEspiral3.jpg';
 import { Image } from "astro:assets"
 
 const metadata = {
@@ -29,16 +39,16 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Más información',
-        href: 'https://github.com/onwidget/astrowind',
+        href: 'https://reprodisseny.com/category/calendarios-para-imprimir',
         target: '_blank',
         icon: 'tabler:download',
       },
     
     ]}
-    image={{ src: ImgProfile, alt: 'AstroWind Hero Imageasfasfas' }}
+    image={{ src: ImgProfile, alt: 'Catálogos para empresas personaliazdos para comprar en Repro Disseny' }}
   >
   
-  <Image src={ImgProfile} alt="resrsrse"/>
+  <Image src={ImgProfile} alt="Imagen calendarios impresos Repro Disseny en Barcelona"/>
 
 
   <Fragment slot="title">
@@ -106,7 +116,7 @@ const metadata = {
   <Content
     isReversed
     tagline="Modelos de calendarios"
-    title="Elige el model que más de adapte a tus necesidades"
+    title="Elige el modelo que más de adapte a tus necesidades"
     items={[
       {
         title: 'Organización eficiente',
@@ -125,7 +135,7 @@ const metadata = {
       },
     ]}
     image={{
-      src: ImgProfile.src,
+      src: ImgTbl.src,
       alt: 'Imagen de calendarios de mesa',
     }}
   >
@@ -160,7 +170,7 @@ const metadata = {
       }
     ]}
     image={{
-      src: '../assets/images/SobremesaHome.jpg',
+      src: ImgTbl0.src,
       alt: 'Calendarios de mesa',
     }}
   >
@@ -175,65 +185,28 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="Get your dream website up and running in no time with AstroWind."
+    title="Consigue tu calendarios corporativos para el 2025"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Download</span>',
+        title: 'Paso 1: <span class="font-medium">Pídenos información</span>',
         description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+          "Solicita información a nuestros comerciales a través de los canales de comunicación habituales.",
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
+        title: 'Paso 2: <span class="font-medium">Oferta personalizada</span>',
         description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+          "Recibirás una oferta económica personalizada según tus intereses y necesidades. Recuerda que puedes contactar con nosotros para resolver culaquier duda por los canales habituales",
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        title: 'Paso 3: <span class="font-medium">Dísfrutalos</span>',
         description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+          'Confirma la oferta y recibe tus calendarios corporativos según las condiciones que has especificado en la oferta.',
         icon: 'tabler:paint',
       },
       {
@@ -248,9 +221,8 @@ const metadata = {
   />
 
   <!-- Features2 Widget ************** -->
-
   <Features2
-    title="Most used widgets"
+    title="Calendarios para empresas 2025"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     tagline="Components"
     items={[
