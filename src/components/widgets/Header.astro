@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Logo from '~/components/Logo.astro';
+import { Image } from 'astro:assets';
+//import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
@@ -8,6 +9,8 @@ import Button from '~/components/ui/Button.astro';
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
+
+import Logo1 from '~/assets/icons/reprodisseny.jpg';
 
 interface Link {
   text?: string;
@@ -69,9 +72,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       },
     ]}
   >
+  <!-- Logo de Repro Disseny -->
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <Image 
+          src={Logo1} 
+          alt="Logo Repro Disseny impressión digital y offset en Barcelona" 
+          class="logo-responsive"
+          />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
@@ -151,3 +159,19 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+
+<!-- Estilos encapsulados para el componente Header.astro -->
+
+<style>
+  .logo-responsive {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .logo-responsive {
+      max-width: 100px; /* Reducción del tamaño en pantallas pequeñas */
+    }
+  }
+</style>
