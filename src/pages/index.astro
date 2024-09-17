@@ -1,31 +1,30 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Logo from '~/components/Logo.astro';
+//import Logo from '~/components/Logo.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+//import Note from '~/components/widgets/Note.astro';
+//import Features from '~/components/widgets/Features.astro';
+//import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+//import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+//import Stats from '~/components/widgets/Stats.astro';
+//import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import ImgProfile from "../assets/images/Calendarios.png";
 import ImgTbl from '../assets/images/mesa/SobremesaHome.jpg';
 import ImgTbl0 from '../assets/images/mesa/SobremesaEspiral.jpg';
 import calendarImg from '../assets/images/calendarImg2.jpg';
-
+/*
 import ImgTbl1 from '../assets/images/mesa/SobremesaEspiral1.jpg';
 import ImgTbl2 from '../assets/images/mesa/SobremesaEspiral2.jpg';
 import ImgTbl3 from '../assets/images/mesa/SobremesaEspiral3.jpg';
 import ImgWll from '../assets/images/pared/ParedHome.jpg';
 import ImgWll0 from '../assets/images/pared/ParedEspiral.jpg';
+import { Image } from "astro:assets"
 import ImgWll1 from '../assets/images/pared/ParedEspiral1.jpg';
 import ImgWll2 from '../assets/images/pared/ParedEspiral2.jpg';
-import ImgWll3 from '../assets/images/pared/ParedEspiral3.jpg';
-import { Image } from "astro:assets"
+import ImgWll3 from '../assets/images/pared/ParedEspiral3.jpg';*/
 
 const metadata = {
   title: 'Calendarios para empresas',
@@ -47,10 +46,7 @@ const metadata = {
       },
     
     ]}
-    image={{ src: ImgProfile, alt: 'Catálogos para empresas personaliazdos para comprar en Repro Disseny' }}
   >
-  
-  <Image src={ImgProfile} alt="Imagen calendarios impresos Repro Disseny en Barcelona"/>
 
 
   <Fragment slot="title">
@@ -142,7 +138,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Calendarios para mesa</h3>
+      <h3 id="calTable" class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Calendarios para mesa</h3>
       Imprime calendarios de mesa personalizados, reforzando tu marca y profesionalidad, con diseños acordes a tu empresa.
     </Fragment>
 
@@ -178,7 +174,7 @@ const metadata = {
   >
     <Fragment slot="content">
 
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Calendarios para pared</h3>
+      <h3 id="calWall" class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Calendarios para pared</h3>
       Los calendarios de pared para empresas combinan visibilidad constante y organización centralizada, reforzando la marca y facilitando la planificación diaria.
     </Fragment>
 
@@ -217,12 +213,12 @@ const metadata = {
       },
     ]}
     image={{
-      src: calendarImg,
+      src: calendarImg.src,
       alt: 'Steps image',
     }}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Features2 Widget ************** 
   <Features2
     title="Calendarios para empresas 2025"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
@@ -284,8 +280,8 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
+-->
+  <!-- HighlightedPosts Widget ******* 
 
   <BlogLatestPosts
     title="Find out more content in our Blog"
@@ -294,50 +290,50 @@ const metadata = {
                         Astro is a very interesting technology. Thanks.
                 `}
   />
-
+-->
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    title="Preguntas freqüentes"
+    subtitle="Para obtener un presupuesto para la impresión digital de calendarios en Barcelona, completa nuestro formulario en línea o contáctanos por correo electrónico o teléfono. Incluye detalles como el tipo de calendario, cantidad y cualquier personalización especial que necesites."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: '¿Qué tipo de calendarios ofrece Reprodisseny?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          "En Reprodisseny, ofrecemos calendarios personalizados en diversos formatos: de pared, de mesa y de bolsillo. Utilizamos impresión digital de alta calidad para asegurar un acabado profesional y duradero. Personaliza tu calendario a tu medida con nuestro servicio de impresión digital.",
       },
       {
-        title: 'What do I need to start?',
+        title: '¿Cómo puedo solicitar un presupuesto para la impresión digital de calendarios?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          "Para obtener un presupuesto preciso para la impresión digital de calendarios, indícanos la cantidad de calendarios que necesitas, el tipo (pared, de mesa, etc.), el diseño, el tamaño y las especificaciones de personalización. Cuanta más información proporciones, más detallado será el presupuesto que recibas." 
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: '¿Qué información necesito proporcionar para obtener un presupuesto de calendarios?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'Para recibir un presupuesto exacto, indícanos la cantidad, tipo (pared, mesa, etc.), diseño, tamaño y especificaciones de personalización. Cuanta más información proporciones, más detallado será el presupuesto.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: "¿Cómo puedo personalizar mi calendario con Reprodisseny?",
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          "Personalizar tu calendario es fácil. Elige el formato, agrega tus fotos o gráficos y selecciona las fechas importantes. Nuestro equipo te asistirá para que el calendario refleje tu estilo y necesidades."
+      },    
+      {
+        title: '¿Cuáles son los beneficios de elegir impresión digital para calendarios?',
+        description:
+          "La impresión digital garantiza alta precisión y reproducción fiel de colores, ideal para calendarios personalizados. Además, ofrece tiempos de entrega rápidos y la posibilidad de realizar cambios de última hora sin costos adicionales.",
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: '¿Cómo es el proceso de compra y envío para los calendarios personalizados?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          "El proceso es sencillo: selecciona tu calendario, solicita una oferta personalizada, revisa y confirma. Procederemos con la impresión y te enviaremos tu calendario a cualquier ubicación en Barcelona o más allá, con opciones de envío rápido disponibles",
       },
     ]}
   />
 
   <!-- Stats Widget ****************** -->
-
+<!-- 
   <Stats
     stats={[
       { title: 'Downloads', amount: '132K' },
@@ -347,8 +343,8 @@ const metadata = {
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
-
+  CallToAction Widget *********** -->
+<!-- 
   <CallToAction
     actions={[
       {
@@ -369,4 +365,5 @@ const metadata = {
       waste more time! :P
     </Fragment>
   </CallToAction>
+-->  
 </Layout>
