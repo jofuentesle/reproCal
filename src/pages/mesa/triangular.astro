@@ -1,0 +1,43 @@
+---
+import Layout from '~/layouts/LandingLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import SobremesaTriangular from '~/assets/images/mesa/SobremesaTriangular.jpg';
+
+const metadata = {
+  title: 'Página calendarios para mesa',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Calendario trinagular de mesa"
+    title="Calendario en forma trinagular de mesa para el 2025."
+    subtitle="Calendarios de mesa con espiral personalizados: elegancia y funcionalidad para tu escritorio, impresos en alta calidad. ¡Haz tu consulta!"
+    actions={[
+     { variant: 'primary', text: 'Pide tu oferta!', href: '#', icon: 'tabler:square-rounded-arrow-right' },
+     { text: 'Saber más', href: '#' },
+    ]}
+    image={{
+      src: SobremesaTriangular,
+      alt: 'Calendario triangular de mesa para el 2025',
+    }}
+  />
+
+  <CallToAction
+    title="Coming soon"
+    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Download Template',
+        href: 'https://github.com/onwidget/astrowind',
+        icon: 'tabler:download',
+      },
+    ]}
+  />
+</Layout>

@@ -26,20 +26,30 @@ export const headerData = {
     {
       text: 'Mesa',
       href: "#calTable",
-    /*links: [
+      links: [
         {
           text: 'Espiral',
-          href: getPermalink('/espiral'),
+          href: getPermalink('/mesa/espiral'),
         },
         {
           text: 'Triangular',
-          href: getPermalink('/triangular'),
+          href: getPermalink('/mesa/triangular'),
         }
-      ],*/
+      ]
     },
     {
       text: 'Pared',
-      href:'#calWall',
+      href:'#',
+      links: [ 
+        {
+          text: 'Espiral',
+          href:  getPermalink('/pared/espiral'),
+        },
+        {
+          text: 'Revista',
+          href:  getPermalink('/pared/revista'),
+        }
+      ]
     },
     {
       text: 'Nosotros',
@@ -47,7 +57,7 @@ export const headerData = {
     },
     {
       text: 'Contacto',
-      href: '#',
+      href: 'contacto'
     },
   ]
 };
