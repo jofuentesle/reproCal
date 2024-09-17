@@ -12,11 +12,14 @@ import compress from 'astro-compress';
 
 import astrowind from './vendor/integration';
 
+import node from '@astrojs/node';
+
 import {
   readingTimeRemarkPlugin,
   responsiveTablesRehypePlugin,
   lazyImagesRehypePlugin,
 } from './src/utils/frontmatter.mjs';
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -25,7 +28,10 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'static',
+  output: 'server', // Esta es la clave para habilitar SSR
+  adapter: node({
+    mode: 'standalone' // Opcional: configura el modo
+  }),
 
   integrations: [
     tailwind({
