@@ -1,8 +1,7 @@
 ---
 import Layout from '~/layouts/LandingLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+
 
 import SobremesaTriangular from '~/assets/images/mesa/SobremesaTriangular.jpg';
 
@@ -26,18 +25,5 @@ const metadata = {
       src: SobremesaTriangular,
       alt: 'Calendario triangular de mesa para el 2025',
     }}
-  />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
-      },
-    ]}
   />
 </Layout>

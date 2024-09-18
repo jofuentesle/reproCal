@@ -2,7 +2,7 @@
 import Layout from '~/layouts/LandingLayout.astro';
 
 import Hero2 from '~/components/widgets/Hero2.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+
 import SobremesaEspiral from '~/assets/images/mesa/SobremesaEspiral3.jpg'; 
 
 const metadata = {
@@ -26,17 +26,5 @@ const metadata = {
       alt: 'Calendario de mesa en espiral impreso por Repro Disseny en Barcelona',
     }}
   />
-
-  <CallToAction
-    title="Coming soon"
-    subtitle="We are working on the content of these demo pages. You will see them very soon. Stay tuned Stay tuned!"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Download Template',
-        href: 'https://github.com/onwidget/astrowind',
-        icon: 'tabler:download',
-      },
-    ]}
-  />
+    
 </Layout>
