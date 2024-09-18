@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/icons/reprodisseny.jpg";
+import logo from "../assets/icons/reprodisseny.png";
+import logoB from "~/assets/icons/ReprodissenyLogoB.png";
 ---
 
 <span
@@ -8,8 +9,15 @@ import logo from "../assets/icons/reprodisseny.jpg";
 >
   <Image
     loading="lazy"
-    class="logo-responsive" 
+    class="logo-responsive logo block dark:hidden" 
     src={logo}
+    alt="Una descripción de mi imagen."
+    />
+
+    <Image
+    loading="lazy"
+    class="logo-responsive logo hidden dark:block" 
+    src={logoB}
     alt="Una descripción de mi imagen."
     />
 </span>

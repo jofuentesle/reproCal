@@ -1,29 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Button from '~/components/ui/Button.astro';
-//import Features from '~/components/widgets/Features.astro';
-//import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-//import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-//import Stats from '~/components/widgets/Stats.astro';
-//import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import ImgTbl from '../assets/images/mesa/SobremesaHome.jpg';
 import ImgTbl0 from '../assets/images/mesa/SobremesaEspiral.jpg';
 import calendarImg from '../assets/images/calendarImg2.jpg';
-/*
-import ImgTbl1 from '../assets/images/mesa/SobremesaEspiral1.jpg';
-import ImgTbl2 from '../assets/images/mesa/SobremesaEspiral2.jpg';
-import ImgTbl3 from '../assets/images/mesa/SobremesaEspiral3.jpg';
-import ImgWll from '../assets/images/pared/ParedHome.jpg';
-import ImgWll0 from '../assets/images/pared/ParedEspiral.jpg';
-import { Image } from "astro:assets"
-import ImgWll1 from '../assets/images/pared/ParedEspiral1.jpg';
-import ImgWll2 from '../assets/images/pared/ParedEspiral2.jpg';
-import ImgWll3 from '../assets/images/pared/ParedEspiral3.jpg';*/
 
 const metadata = {
   title: 'Calendarios para empresas',
@@ -34,35 +19,70 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Más información',
-        href: 'https://reprodisseny.com/category/calendarios-para-imprimir',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    
-    ]}
-  >
-
-  <Button text="hialasfas"/>
-
+  
+  <Hero>
+  
   <Fragment slot="title">
       Calendarios de <span class="hidden xl:inline">empresas</span>, la
       <span class="text-accent dark:text-white highlight"> publicidad mas efectiva</span> 365 días al año.
     </Fragment>
-    
+    <h1>holas mundos</h1>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">Descubre los 
         <span class="font-semibold">calendarios para 2025 de Repro Disseny.</span> Equilibrio perfecto entre diseño, funcionalidad y sostenibilidad. Nuestros calendarios no solo marcan días, sino que inspiran y decoran tu espacio, adaptándose a tus necesidades y gustos.</span>
     </Fragment>
   </Hero>
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Beneficios y retorno inversión"
+    title="Calendarios de empresa para 2025" 
+    subtitle="Reparte calendarios 2025 personalizados y asegura que tu marca esté presente en la vida diaria de tus clientes durante todo el año. Un regalo útil que refuerza tu visibilidad y fideliza a tu público. ¡Solicita tu presupuesto hoy mismo y destaca con calendarios únicos!."
+    items={[
+      {
+        title: 'Presencia diaria de marca',
+        description:
+          'Tu marca estará presente cada día del año, asegurando que tus clientes siempre tengan en mente tu negocio.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Publicidad económica y duradera',
+        description:
+          'Promociona tu marca durante todo un año con una inversión mínima. ¡12 meses de exposición por el precio de un solo producto!',
+        icon: 'tabler:moneybag',
+      },
+      {
+        title: 'Fortalece la fidelidad del cliente',
+        description:
+          'Recompensa la lealtad de tus clientes con un regalo útil y duradero que refuerza tu relación con ellos.',
+        icon: 'tabler:heart-handshake',
+      },
+      {
+        title: 'Recordatorio visual constante de eventos y promociones',
+        description:
+          'Informa a tus clientes de eventos importantes o promociones con un calendario que incluye tus fechas clave.',
+        icon: 'tabler:calendar-event',
+      },
+      {
+        title: 'Refleja profesionalismo y cuidado por el detalle',
+        description:
+          "Un calendario con tu imagen corporativa refleja profesionalismo y cuidado en cada interacción con tus clientes.",
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Ampliación del alcance de la marca',
+        description:
+          'Un calendario en manos de tus clientes puede llegar a nuevos prospectos, multiplicando la visibilidad de tu marca.',
+        icon: 'tabler:world',
+      },
+    ]}
+  />
 
   <!-- Content Widget **************** -->
   <Content
     isReversed
+    id='calendarList'
     tagline="Modelos de calendarios"
     title="Elige el modelo que más de adapte a tus necesidades"
     items={[
@@ -85,8 +105,9 @@ const metadata = {
     image={{
       src: ImgTbl.src,
       alt: 'Imagen de calendarios de mesa',
-    }}
+    }} 
   >
+
     <Fragment slot="content">
       <h3 id="calTable" class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Calendarios para mesa</h3>
       Imprime calendarios de mesa personalizados, reforzando tu marca y profesionalidad, con diseños acordes a tu empresa.
@@ -152,13 +173,13 @@ const metadata = {
         icon: 'tabler:letter-case',
       },
       {
-        title: 'Paso 3: <span class="font-medium">Dísfrutalos</span>',
+        title: 'Paso 3: <span class="font-medium">Pasamos a producción</span>',
         description:
           'Confirma la oferta y recibe tus calendarios corporativos según las condiciones que has especificado en la oferta.',
         icon: 'tabler:paint',
       },
       {
-        title: 'Ready!',
+        title: 'Listos para entregar!',
         icon: 'tabler:check',
       },
     ]}
@@ -168,79 +189,7 @@ const metadata = {
     }}
   />
 
-  <!-- Features2 Widget ************** 
-  <Features2
-    title="Calendarios para empresas 2025"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
--->
-  <!-- HighlightedPosts Widget ******* 
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
--->
+  
   <!-- FAQs Widget ******************* -->
 
   <FAQs
