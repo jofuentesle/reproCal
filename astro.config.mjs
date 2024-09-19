@@ -2,6 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
+import netlify from '@astrojs/netlify';
 
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -21,6 +22,9 @@ import {
 } from './src/utils/frontmatter.mjs';
 
 
+import vercel from '@astrojs/vercel/serverless';
+
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -29,8 +33,8 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'server', // Esta es la clave para habilitar SSR
-  adapter: node({
-    mode: 'standalone' // Opcional: configura el modo
+  adapter:  netlify({
+    edgeMiddleware: true
   }),
 
   integrations: [
