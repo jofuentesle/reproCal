@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/LandingLayout.astro';
-
 import Hero2 from '~/components/widgets/Hero2.astro';
+import Table from '~/components/widgets/Table.astro';
 
 import SobremesaEspiral from '~/assets/images/mesa/SobremesaEspiral3.jpg'; 
 
@@ -26,5 +26,63 @@ const metadata = {
       alt: 'Calendario de mesa en espiral impreso por Repro Disseny en Barcelona',
     }}
   />
+  <Table
+  title="Lista de precios especiales"
+
+  tagline="calendario para mesa en espiral"
+
+  />
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+          <table
+            class="min-w-full text-left text-sm font-light text-surface dark:text-white">
+            <thead
+              class="border-b border-neutral-200 font-medium dark:border-white/10">
+              <tr>
+                <th scope="col" class="px-6 py-4">Unidades</th>
+                <th scope="col" class="px-6 py-4">Rectangular 21x10cm</th>
+                <th scope="col" class="px-6 py-4">Cuadrado 15x15cm</th>
+                <th scope="col" class="px-6 py-4">A5 21x15 cm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-neutral-200 dark:border-white/10">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">50</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">2 €</td>
+                <td class="whitespace-nowrap px-6 py-4">3 €</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-white/10">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">100</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">2 €</td>
+                <td class="whitespace-nowrap px-6 py-4">3 €</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-white/10">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">250</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">2 €</td>
+                <td class="whitespace-nowrap px-6 py-4">3 €</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-white/10">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">500</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+              </tr>
+              <tr class="border-b border-neutral-200 dark:border-white/10">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">1000</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+                <td class="whitespace-nowrap px-6 py-4">1 €</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
     
 </Layout>
