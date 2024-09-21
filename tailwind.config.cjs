@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--aw-color-primary)',
+       // primary: 'var(--aw-color-primary)',
+        primary: '#1a78b3',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',

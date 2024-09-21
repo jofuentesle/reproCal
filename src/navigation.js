@@ -65,12 +65,12 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Calendarios',
+      title: '',
       links: [
-        { text: 'Calendario de mesa espiral', href: '#' },
-        { text: 'Calendario de mesa triangular', href: '#' },
-        { text: 'Calendario de parad espiral', href: '#' },
-        { text: 'Calendario de pared revista', href: '#' },
+        { text: 'Calendario de mesa espiral', href: '/mesa/espiral' },
+        { text: 'Calendario de mesa triangular', href: '/mesa/triangulo' },
+        { text: 'Calendario de parad espiral', href: '/pared/espiral' },
+        { text: 'Calendario de pared revista', href: '/pared/revista' },
         
       ],
     }
