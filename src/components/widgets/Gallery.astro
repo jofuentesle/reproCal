@@ -1,20 +1,53 @@
+---
+
+import { Image } from 'astro:assets';
+// Photoswipe y estilos
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
+import ImgTbl from '~/assets/images/mesa/SobremesaHome.jpg';
+import ImgTbl2 from '~/assets/images/calendarios/ParedEspiral_2.jpg'
+---
 <!-- Contenedor principal de Swiper -->
 <div class="swiper">
     <!-- Wrapper adicional requerido -->
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper" id="my-slider">
       <!-- Los slides -->
-      <div class="swiper-slide">
-        <img src="/calendarios/ParedEspiral_1.jpg" alt="" />
-      </div>
-      <div class="swiper-slide">
-        <img src="/calendarios/ParedEspiral_2.jpg" alt="" />
-      </div>
-      <div class="swiper-slide">
-        <img src="/calendarios/ParedEspiral_3.jpg" alt="" />
-      </div>
-      <div class="swiper-slide">
-        <img src="//calendarios/ParedEspiral_4.jpg" alt="" />
-      </div>
+      <a 
+        class="swiper-slide"
+        href="/images/image1.jpeg"
+        data-pswp-width="800" data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+        <Image src={ImgTbl} alt=""/>
+      </a>
+      <a
+        class="swiper-slide"
+        href="/src/assets/images/mesa/SobremesaHome.jpg"
+        data-pswp-width="800" data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+        <Image src={ImgTbl2} alt=""/>
+      </a>
+      <a
+        class="swiper-slide"
+        href="/src/assets/images/mesa/SobremesaEspiral1.jpeg"
+        data-pswp-width="800" data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+        <Image src={ImgTbl2} alt=""/>
+      </a>
+      <a
+        class="swiper-slide"
+        href="/src/assets/images/mesa/SobremesaEspiral3.jpeg"
+        data-pswp-width="800" data-pswp-height="800"
+        target="_blank"
+        data-cropped="true"
+      >
+        <Image src={ImgTbl2} alt=""/>
+      </a>
     </div>
     <!-- Botones de navegación -->
     <div class="swiper-button-prev"></div>
@@ -32,6 +65,17 @@
     height: 100%;
     object-fit: cover;
   }
+
+  @media(max-width: 768px) {
+  .swiper-slide {
+    width: 70%; /* Útil si la propiedad slidesPerView es "auto" */
+    height: 400px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
 </style>
 
  <script>
@@ -41,16 +85,38 @@
   // Módulo Navigation de Swiper y estilos
   import { Navigation } from "swiper/modules";
   import "swiper/css/navigation";
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
   // Configurar Swiper
   const swiper = new Swiper(".swiper", {
     modules: [Navigation], // definir los módulos a usar
     loop: true,            // definir si los slides estarán en bucle
-    slidesPerView: 3,      // agregar número de slides para la pantalla
-    spaceBetween: 40,      // separación entre slides en px
+    slidesPerView: "auto",      // agregar número de slides para la pantalla
+    spaceBetween: 20,      // separación entre slides en px
+    breakpoints: {
+    // Cuando la pantalla es >= 768px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    // Cuando la pantalla es >= 1024px
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 40
+    }
+  },
     navigation: {          // definir botones next y prev para el módulo Navigation
       prevEl: ".swiper-button-prev",
       nextEl: ".swiper-button-next",
     }
   });
+  swiper.init()
+
+  // Configurar e inicializar Photoswipe
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#my-slider',
+  children: 'a',
+  pswpModule: () => import('photoswipe')
+});
+lightbox.init()
 </script>
