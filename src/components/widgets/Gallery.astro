@@ -1,0 +1,56 @@
+<!-- Contenedor principal de Swiper -->
+<div class="swiper">
+    <!-- Wrapper adicional requerido -->
+    <div class="swiper-wrapper">
+      <!-- Los slides -->
+      <div class="swiper-slide">
+        <img src="/calendarios/ParedEspiral_1.jpg" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/calendarios/ParedEspiral_2.jpg" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="/calendarios/ParedEspiral_3.jpg" alt="" />
+      </div>
+      <div class="swiper-slide">
+        <img src="//calendarios/ParedEspiral_4.jpg" alt="" />
+      </div>
+    </div>
+    <!-- Botones de navegación -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <style>
+  .swiper-slide {
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+ <script>
+  // Core de Swiper y estilos
+  import Swiper from 'swiper';
+  import 'swiper/css';
+  // Módulo Navigation de Swiper y estilos
+  import { Navigation } from "swiper/modules";
+  import "swiper/css/navigation";
+
+  // Configurar Swiper
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation], // definir los módulos a usar
+    loop: true,            // definir si los slides estarán en bucle
+    slidesPerView: 3,      // agregar número de slides para la pantalla
+    spaceBetween: 40,      // separación entre slides en px
+    navigation: {          // definir botones next y prev para el módulo Navigation
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
+    }
+  });
+</script>
