@@ -1,0 +1,43 @@
+---
+import Layout from '~/layouts/LandingLayout2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Table from '~/components/widgets/Table2.astro';
+
+import ParedEspiral from '~/assets/images/pared/ParedEspiral3.jpg';
+
+const metadata = {
+  title: 'Calendario de pared espiral',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+  <Content>
+    <Hero2
+    tagline="Calendario de pared en espiral"
+    title="Calendarios de pared con espiral para el 2025."
+    subtitle="Calendarios de pared con espiral personalizados: organización práctica y diseño a tu medida, impresos en alta calidad. ¡Descubre nuestras opciones"
+    actions={[
+      { variant: 'primary', text: 'Pide tu oferta!', href: '/contacto', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Saber más', href: '#priceCalEspiral' },
+    ]}
+    image={{
+      src:  ParedEspiral,
+      alt: '',
+    }}
+    />
+    <Table
+    id="priceCalEspiral"
+    title="Lista de precios especiales"
+    tagline="calendario para pared con espiral"
+    price1 ="240 €"
+    price2 = "369 €"
+    price3 = "744 €"    
+    price4 = "1190 €"
+    price5 =  "1608 €"
+    
+    />
+  </Content>    
+
+</Layout>

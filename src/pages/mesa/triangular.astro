@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/LandingLayout2.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Table from '~/components/widgets/Table.astro';
+
+import SobremesaTriangular from '~/assets/images/mesa/SobremesaTriangular.jpg';
+
+const metadata = {
+  title: 'Página calendarios para mesa',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Calendario trinagular de mesa"
+    title="Calendario en forma trinagular de mesa para el 2025."
+    subtitle="Calendarios de mesa con espiral personalizados: elegancia y funcionalidad para tu escritorio, impresos en alta calidad. ¡Haz tu consulta!"
+    actions={[
+     { variant: 'primary', text: 'Pide tu oferta!', href: '/contacto', icon: 'tabler:square-rounded-arrow-right' },
+     { text: 'Saber más', href: '#priceCaltriangulo' },
+    ]}
+    image={{
+      src: SobremesaTriangular,
+      alt: 'Calendario triangular de mesa para el 2025',
+    }}
+  />
+
+  <Table
+    id="priceCaltriangulo"
+    title="Lista de precios especiales"
+    tagline="calendario para mesa triangular"
+    price1 ="50 €"
+    price1b ="63 €"
+    price2 = "70 €"
+    price2b = "89 €"
+    price3 = "121 €"
+    price3b = "178 €"
+    price4 = "211 €"
+    price4b = "303 €"
+    price5 =  "370 €"
+    price5b = "420 €"
+/>
+</Layout>

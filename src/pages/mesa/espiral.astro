@@ -1,0 +1,46 @@
+---
+import Layout from '~/layouts/LandingLayout2.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Table from '~/components/widgets/Table.astro';
+
+import SobremesaEspiral from '~/assets/images/mesa/SobremesaEspiral3.jpg'; 
+
+const metadata = {
+  title: 'Calendarios para mesa espiral',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Calendario para mesa"
+    title="Diseña y Personaliza tus Calendarios de Sobremesa 2025."
+    subtitle="Calendarios de mesa con espiral personalizados: elegancia y funcionalidad para tu escritorio, impresos en alta calidad. ¡Haz tu consulta!"
+    actions={[
+     { variant: 'primary', text: 'Pide tu oferta!', href: '/contacto', icon: 'tabler:square-rounded-arrow-right' },
+     { text: 'Saber más', href: '#priceCalEspiral' },
+    ]}
+    image={{
+      src: SobremesaEspiral,
+      alt: 'Calendario de mesa en espiral impreso por Repro Disseny en Barcelona',
+    }}
+  />
+  <Table
+    id="priceCalEspiral"
+    title="Lista de precios especiales"
+    tagline="calendario para mesa en espiral"
+    price1 ="164 €"
+    price1b ="183 €"
+    price2 = "236 €"
+    price2b = "288 €"
+    price3 = "455 €"
+    price3b = "563 €"
+    price4 = "704 €"
+    price4b = "849 €"
+    price5 =  "1207 €"
+    price5b = "1475 €"
+  />
+  
+    
+</Layout>
