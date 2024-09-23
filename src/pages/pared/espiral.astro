@@ -1,6 +1,5 @@
 ---
 import Layout from '~/layouts/LandingLayout2.astro';
-import Content from '~/components/widgets/Content.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 
 //Importamos images para las rutas
@@ -17,24 +16,21 @@ const galleryImages = [
 ];
 
 const metadata = {
-  title: 'Calendario de pared espiral',
+  title: 'Calendarios revista pared',
 };
 ---
-
 <Layout metadata={metadata}>
   <!-- Hero2 Widget ******************* -->
-  <Content>
-    <Hero2
-    tagline="Calendario de pared en espiral"
-    title="Calendarios de pared con espiral para el 2025."
-    subtitle="Calendarios de pared con espiral personalizados: organización práctica y diseño a tu medida, impresos en alta calidad. ¡Descubre nuestras opciones"
+
+  <Hero2
+    tagline="Calendario revista"
+    title="Calendario tipo revista para pared del 2025."
+    subtitle="Craft a tantalizing Coming Soon or Pre-Launch Landing Page that leaves visitors eagerly awaiting your launch."
     actions={[
-      { variant: 'primary', text: 'Pide tu oferta!', href: '/contacto', icon: 'tabler:square-rounded-arrow-right' },
-      { text: 'Saber más', href: '#priceCalEspiral' },
+      { variant: 'primary', text: 'Pide tu oferta!', href: 'contacto', icon: 'tabler:square-rounded-arrow-right' },
+      { text: 'Saber más', href: '#' },
     ]}
     galleryImages={galleryImages}
-    />
-   
-  </Content>    
-
+  />
+ 
 </Layout>
