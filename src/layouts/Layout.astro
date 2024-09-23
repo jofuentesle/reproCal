@@ -30,7 +30,7 @@ const { language, textDirection } = I18N;
 <html lang={language} 
       dir={textDirection} 
       class="2xl:text-[20px]"
-      transition:animate="slide"
+      transition:animate="none"
 >
   <head>
     <CommonMeta />
@@ -42,7 +42,7 @@ const { language, textDirection } = I18N;
     <Analytics />
 
     <!-- Comment the line below to disable View Transitions -->
-    <ViewTransitions fallback="swap" />
+    <ViewTransitions />
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">

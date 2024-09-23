@@ -1,4 +1,5 @@
 ---
+
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -6,14 +7,23 @@ import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
+import Slider from '~/components/widgets/Slider.astro';
+
+import Img1 from '~/assets/images/calendarios/slide1.jpg';
+import Img2 from '~/assets/images/calendarios/slide2.jpg';
+import Img3 from '~/assets/images/calendarios/slide3.jpg';
+
 import ImgTbl from '~/assets/images/mesa/SobremesaHome.jpg';
 import ImgTbl0 from '~/assets/images/pared/ParedEspiral.jpg';
 import calendarImg from '~/assets/images/CategoriaCalendarios.png';
 
-import 'swiper/css';
 
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+
+const galleryImages = [
+  { src: Img1.src, alt: 'Descripción de la imagen 1' },
+  { src: Img2.src, alt: 'Descripción de la imagen 2' },
+  { src: Img3.src, alt: 'Descripción de la imagen 3' },
+];
 
 const metadata = {
   title: 'Calendarios para empresas',
@@ -23,6 +33,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <Hero>
+    <Slider images={galleryImages} />
     <Fragment slot="title">
         Calendarios de <span class="hidden xl:inline">empresas</span>, la
         <span class="text-accent dark:text-white highlight"> publicidad mas efectiva</span> 365 días al año.
@@ -32,9 +43,16 @@ const metadata = {
         <span class="hidden sm:inline">Descubre los 
           <span class="font-semibold">calendarios para 2025 de Repro Disseny.</span> Equilibrio perfecto entre diseño, funcionalidad y sostenibilidad. Nuestros calendarios no solo marcan días, sino que inspiran y decoran tu espacio, adaptándose a tus necesidades y gustos.</span>
     </Fragment>
+    <Fragment slot="galleryImages">
+      <Slider images={galleryImages} />
+    </Fragment>
+    <!-- Swiper como fondo -->
+    <Fragment slot="bg">
+      
+    </Fragment>
   </Hero>
   <!-- Features Widget *************** -->
-
+  <Slider images={galleryImages} />
 <Features
     id="features"
     tagline="Beneficios y retorno inversión"

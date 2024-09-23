@@ -12,10 +12,11 @@ export interface Props {
   metadata?: MetaData;
 }
 
+
 const { metadata } = Astro.props;
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} transition:animate="none">
   <slot name="announcement">
     <Announcement />
   </slot>

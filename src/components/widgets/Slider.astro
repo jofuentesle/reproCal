@@ -1,106 +1,93 @@
 ---
-import Swiper from 'swiper';
-import { Navigation, FreeMode, Thumbs } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/free-mode';
-import 'swiper/css/thumbs';
-
-
+//Definimos constante para pasar props
+const { images = [] } = Astro.props;
 ---
 
-<div class="swiper-container">
+<script>
+  // Core de Swiper y estilos
+  import Swiper, { Swiper as SwiperInstance } from 'swiper'; // SwiperInstance para tipado
+  import Navigation from 'swiper'; 
+  // Módulo Navigation de Swiper y estilos
+  
+  import "swiper/css/navigation";
+  import 'swiper/css';
+
+
+  let mainSwiper: SwiperInstance|null = null;
+  
+  // Ejecutar el script cuando el DOM esté completamente cargado
+   // Función para inicializar Swiper
+   function initializeSwiper() {
+
+     // Destruir instancias anteriores si existen
+     if (mainSwiper) {
+      mainSwiper.destroy(); // Destruir correctamente
+      mainSwiper = null;
+    }
+
+    mainSwiper = new Swiper(".swiper", {
+      modules: [Navigation],
+      spaceBetween: 40,
+      centeredSlides: true,
+        autoplay: {
+          delay: 500,
+          disableOnInteraction: false,
+        },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
+    });
+   }
+
+   // Esperar a que el DOM esté listo antes de inicializar Swiper
+  setTimeout(() => {
+    initializeSwiper();
+  }, 100); // Esperamos un pequeño retraso para asegurar que el DOM esté completamente cargado.
+
+  // Esperar a que el DOM esté listo antes de inicializar Swiper
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeSwiper();
+  });
+  
+</script>
+
+<!-- Contenedor principal de Swiper -->
+
   <div class="swiper main">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
+      {images.map(image => (
+        <div class="swiper-slide">
+          <img src={image.src} alt={image.alt} class="object-cover w-full h-full" />
+        </div>
+      ))}
     </div>
+  
+    <!-- Controles de navegación y paginación -->
+    <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
-  <div class="swiper thumbs">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-    </div>
-  </div>
-</div>
+  
 
 <style>
-    .swiper-container{
-    position: relative;
-    height: 600px;
-    }
-    .swiper.main {
-    width: 100%;
-    height: 80%;
-    }
-    .swiper.thumbs {
-    width: 100%;
-    height: 20%;
-    box-sizing: border-box;
-    padding: 10px 0;
-    }
-    .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    }
-    .thumbs .swiper-slide{
-    width: 25%;
-    height: 100%;
-    opacity: 0.4;
-    }
+  .swiper {
+  position: relative;
+  height: 600px;
+}
 
-    .thumbs .swiper-slide-thumb-active {
-    opacity: 1;
-    }
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
 
-    .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    }
-
-    main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-    }
-    h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-    }
-    .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-    }
-    .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
-
-<script src="../../libs/slider.js"></script>

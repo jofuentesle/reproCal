@@ -14,8 +14,7 @@ const { images = [] } = Astro.props;
   import {FreeMode, Thumbs } from 'swiper/modules';
   import 'swiper/css';
   import 'swiper/css/navigation';
-  import 'swiper/css/free-mode';
-  import 'swiper/css/thumbs';
+
 
   let mainSwiper: SwiperInstance|null = null;
   let thumbsSwiper:SwiperInstance|null = null;
@@ -61,38 +60,9 @@ const { images = [] } = Astro.props;
   setTimeout(() => {
     initializeSwiper();
   }, 100); // Esperamos un pequeño retraso para asegurar que el DOM esté completamente cargado.
-
-
-/*
-  
-  
-  
-  document.addEventListener('DOMContentLoaded', () => {
-
-  const thumbs_swiper = new Swiper(".thumbs", {
-    modules:[FreeMode],
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-  });
-
-
-  const mainSwiper = new Swiper(".main", {
-    modules: [Navigation,Thumbs],
-    spaceBetween: 40,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: thumbs_swiper,
-    },
-  });
-});*/
+ 
 </script>
 
-<!-- Contenedor principal de Swiper -->
 <!-- Contenedor principal de Swiper -->
 <main>
   <div class="swiper-container">
