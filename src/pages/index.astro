@@ -38,21 +38,36 @@ const metadata = {
         Calendarios de <span class="hidden xl:inline">empresas</span>, la
         <span class="text-accent dark:text-white highlight"> publicidad mas efectiva</span> 365 días al año.
       </Fragment>
+  
+      <Fragment slot="subtitle">
+        <span class="hidden sm:inline">Descubre los 
+          <span class="font-semibold">calendarios para 2025 de Repro Disseny.</span> Equilibrio perfecto entre diseño, funcionalidad y sostenibilidad. Nuestros calendarios no solo marcan días, sino que inspiran y decoran tu espacio, adaptándose a tus necesidades y gustos.</span>
+    </Fragment>
+  
+    <!-- Swiper como fondo -->
+  <Fragment slot="bg">
+    <!-- Contenedor responsivo para el slider -->
+    <div class="absolute inset-0 z-0 w-full h-full overflow-hidden">
+      <Slider images={galleryImages} class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+  </Fragment>
+  </Hero>
+  
+  
+  <!-- <Hero>
+    <Slider images={galleryImages} />
+    <Fragment slot="title">
+        Calendarios de <span class="hidden xl:inline">empresas</span>, la
+        <span class="text-accent dark:text-white highlight"> publicidad mas efectiva</span> 365 días al año.
+      </Fragment>
 
       <Fragment slot="subtitle">
         <span class="hidden sm:inline">Descubre los 
           <span class="font-semibold">calendarios para 2025 de Repro Disseny.</span> Equilibrio perfecto entre diseño, funcionalidad y sostenibilidad. Nuestros calendarios no solo marcan días, sino que inspiran y decoran tu espacio, adaptándose a tus necesidades y gustos.</span>
     </Fragment>
-    <Fragment slot="galleryImages">
-      <Slider images={galleryImages} />
-    </Fragment>
-    <!-- Swiper como fondo -->
-    <Fragment slot="bg">
-      
-    </Fragment>
-  </Hero>
+  </Hero>-->
   <!-- Features Widget *************** -->
-  <Slider images={galleryImages}/>
 <Features
     id="features"
     tagline="Beneficios y retorno inversión"
