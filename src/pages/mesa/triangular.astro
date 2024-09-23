@@ -1,9 +1,18 @@
 ---
 import Layout from '~/layouts/LandingLayout2.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Table from '~/components/widgets/Table.astro';
 
-import SobremesaTriangular from '~/assets/images/mesa/SobremesaTriangular.jpg';
+import Img1 from '~/assets/images/mesa/SobremesaTriangular.jpg';
+import Img2 from '~/assets/images/mesa/SobremesaTriangular.jpg';
+import Img3 from '~/assets/images/mesa/SobremesaTriangular.jpg';
+import Img4 from '~/assets/images/mesa/SobremesaTriangular.jpg';
+
+const galleryImages = [
+  { src: Img1.src, alt: 'Descripción de la imagen 1' },
+  { src: Img2.src, alt: 'Descripción de la imagen 2' },
+  { src: Img3.src, alt: 'Descripción de la imagen 3' },
+  { src: Img4.src, alt: 'Descripción de la imagen 4' },
+];
 
 const metadata = {
   title: 'Página calendarios para mesa',
@@ -21,25 +30,7 @@ const metadata = {
      { variant: 'primary', text: 'Pide tu oferta!', href: '/contacto', icon: 'tabler:square-rounded-arrow-right' },
      { text: 'Saber más', href: '#priceCaltriangulo' },
     ]}
-    image={{
-      src: SobremesaTriangular,
-      alt: 'Calendario triangular de mesa para el 2025',
-    }}
+    galleryImages={galleryImages}
   />
-
-  <Table
-    id="priceCaltriangulo"
-    title="Lista de precios especiales"
-    tagline="calendario para mesa triangular"
-    price1 ="50 €"
-    price1b ="63 €"
-    price2 = "70 €"
-    price2b = "89 €"
-    price3 = "121 €"
-    price3b = "178 €"
-    price4 = "211 €"
-    price4b = "303 €"
-    price5 =  "370 €"
-    price5b = "420 €"
-/>
+  
 </Layout>

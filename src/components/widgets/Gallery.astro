@@ -1,122 +1,162 @@
 ---
-
-import { Image } from 'astro:assets';
-// Photoswipe y estilos
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
-import ImgTbl from '~/assets/images/mesa/SobremesaHome.jpg';
-import ImgTbl2 from '~/assets/images/calendarios/ParedEspiral_2.jpg'
+//Definimos constante para pasar props
+const { images = [] } = Astro.props;
 ---
-<!-- Contenedor principal de Swiper -->
-<div class="swiper">
-    <!-- Wrapper adicional requerido -->
-    <div class="swiper-wrapper" id="my-slider">
-      <!-- Los slides -->
-      <a 
-        class="swiper-slide"
-        href="/images/image1.jpeg"
-        data-pswp-width="800" data-pswp-height="800"
-        target="_blank"
-        data-cropped="true"
-      >
-        <Image src={ImgTbl} alt=""/>
-      </a>
-      <a
-        class="swiper-slide"
-        href="/src/assets/images/mesa/SobremesaHome.jpg"
-        data-pswp-width="800" data-pswp-height="800"
-        target="_blank"
-        data-cropped="true"
-      >
-        <Image src={ImgTbl2} alt=""/>
-      </a>
-      <a
-        class="swiper-slide"
-        href="/src/assets/images/mesa/SobremesaEspiral1.jpeg"
-        data-pswp-width="800" data-pswp-height="800"
-        target="_blank"
-        data-cropped="true"
-      >
-        <Image src={ImgTbl2} alt=""/>
-      </a>
-      <a
-        class="swiper-slide"
-        href="/src/assets/images/mesa/SobremesaEspiral3.jpeg"
-        data-pswp-width="800" data-pswp-height="800"
-        target="_blank"
-        data-cropped="true"
-      >
-        <Image src={ImgTbl2} alt=""/>
-      </a>
-    </div>
-    <!-- Botones de navegación -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
 
-  <style>
-  .swiper-slide {
-    height: 600px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  @media(max-width: 768px) {
-  .swiper-slide {
-    width: 70%; /* Útil si la propiedad slidesPerView es "auto" */
-    height: 400px;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
-  }
-}
-</style>
-
- <script>
+<script>
   // Core de Swiper y estilos
-  import Swiper from 'swiper';
+  import Swiper, { Swiper as SwiperInstance } from 'swiper'; // SwiperInstance para tipado
   import 'swiper/css';
   // Módulo Navigation de Swiper y estilos
   import { Navigation } from "swiper/modules";
   import "swiper/css/navigation";
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
-  // Configurar Swiper
-  const swiper = new Swiper(".swiper", {
-    modules: [Navigation], // definir los módulos a usar
-    loop: true,            // definir si los slides estarán en bucle
-    slidesPerView: "auto",      // agregar número de slides para la pantalla
-    spaceBetween: 20,      // separación entre slides en px
-    breakpoints: {
-    // Cuando la pantalla es >= 768px
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    // Cuando la pantalla es >= 1024px
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 40
+  import {FreeMode, Thumbs } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/free-mode';
+  import 'swiper/css/thumbs';
+
+  let mainSwiper: SwiperInstance|null = null;
+  let thumbsSwiper:SwiperInstance|null = null;
+
+
+  // Ejecutar el script cuando el DOM esté completamente cargado
+   // Función para inicializar Swiper
+   function initializeSwiper() {
+
+     // Destruir instancias anteriores si existen
+     if (mainSwiper) {
+      mainSwiper.destroy(); // Destruir correctamente
+      mainSwiper = null;
     }
-  },
-    navigation: {          // definir botones next y prev para el módulo Navigation
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
+    if (thumbsSwiper) {
+      thumbsSwiper.destroy(); // Destruir correctamente
+      thumbsSwiper = null;
     }
+
+    // Inicializar Swiper de nuevo
+    thumbsSwiper = new Swiper(".thumbs", {
+      modules: [FreeMode],
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    mainSwiper = new Swiper(".main", {
+      modules: [Navigation, Thumbs],
+      spaceBetween: 40,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbsSwiper,
+      },
+    });
+   }
+
+   // Esperar a que el DOM esté listo antes de inicializar Swiper
+  setTimeout(() => {
+    initializeSwiper();
+  }, 100); // Esperamos un pequeño retraso para asegurar que el DOM esté completamente cargado.
+
+
+/*
+  
+  
+  
+  document.addEventListener('DOMContentLoaded', () => {
+
+  const thumbs_swiper = new Swiper(".thumbs", {
+    modules:[FreeMode],
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
   });
-  swiper.init()
 
-  // Configurar e inicializar Photoswipe
-const lightbox = new PhotoSwipeLightbox({
-  gallery: '#my-slider',
-  children: 'a',
-  pswpModule: () => import('photoswipe')
-});
-lightbox.init()
+
+  const mainSwiper = new Swiper(".main", {
+    modules: [Navigation,Thumbs],
+    spaceBetween: 40,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: thumbs_swiper,
+    },
+  });
+});*/
 </script>
+
+<!-- Contenedor principal de Swiper -->
+<!-- Contenedor principal de Swiper -->
+<main>
+  <div class="swiper-container">
+    <div class="swiper main">
+      <div class="swiper-wrapper">
+        {images.map((image) => (
+          <div class="swiper-slide">
+            <img src={image.src} alt={image.alt} />
+          </div>
+        ))}
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div class="swiper thumbs">
+      <div class="swiper-wrapper">
+        {images.map((image) => (
+          <div class="swiper-slide">
+            <img src={image.src} alt={image.alt} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<style>
+  .swiper-container {
+    position: relative;
+    height: 600px;
+  }
+  .swiper.main {
+    width: 100%;
+    height: 80%;
+  }
+  .swiper.thumbs {
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+  .thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

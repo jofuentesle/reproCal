@@ -236,7 +236,9 @@ export interface Hero extends Omit<Headline, 'classes'>, Omit<Widget, 'isDark' |
   content?: string;
   actions?: string | CallToAction[];
   image?: string | unknown;
+  galleryImages?: { src: string; alt: string; }[];
 }
+type GalleryImages = GalleryImage[];
 
 export interface Team extends Omit<Headline, 'classes'>, Widget {
   team?: Array<TeamMember>;

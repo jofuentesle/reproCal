@@ -1,9 +1,19 @@
 ---
 import Layout from '~/layouts/LandingLayout2.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Table from '~/components/widgets/Table.astro';
 
-import SobremesaEspiral from '~/assets/images/mesa/SobremesaEspiral3.jpg'; 
+import Img1 from '../../assets/images/mesa/SobremesaEspiral.jpg';
+import Img2 from '../../assets/images/mesa/SobremesaEspiral1.jpg';
+import Img3 from '../../assets/images/mesa/SobremesaEspiral2.jpg';
+import Img4 from '../../assets/images/mesa/SobremesaEspiral3.jpg';
+//import Table from '~/components/widgets/Table.astro';
+
+const galleryImages = [
+  { src: Img1.src, alt: 'Descripción de la imagen 1' },
+  { src: Img2.src, alt: 'Descripción de la imagen 2' },
+  { src: Img3.src, alt: 'Descripción de la imagen 3' },
+  { src: Img4.src, alt: 'Descripción de la imagen 4' },
+];
 
 const metadata = {
   title: 'Calendarios para mesa espiral',
@@ -21,25 +31,7 @@ const metadata = {
      { variant: 'primary', text: 'Pide tu oferta!', href: '/contacto', icon: 'tabler:square-rounded-arrow-right' },
      { text: 'Saber más', href: '#priceCalEspiral' },
     ]}
-    image={{
-      src: SobremesaEspiral,
-      alt: 'Calendario de mesa en espiral impreso por Repro Disseny en Barcelona',
-    }}
-  />
-  <Table
-    id="priceCalEspiral"
-    title="Lista de precios especiales"
-    tagline="calendario para mesa en espiral"
-    price1 ="164 €"
-    price1b ="183 €"
-    price2 = "236 €"
-    price2b = "288 €"
-    price3 = "455 €"
-    price3b = "563 €"
-    price4 = "704 €"
-    price4b = "849 €"
-    price5 =  "1207 €"
-    price5b = "1475 €"
+    galleryImages={galleryImages}
   />
   
     

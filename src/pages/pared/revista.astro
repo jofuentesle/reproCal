@@ -1,15 +1,23 @@
 ---
 import Layout from '~/layouts/LandingLayout2.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Table from '~/components/widgets/Table2.astro';
 
-import ParedRevista from  '~/assets/images/pared/ParedRevista2.jpg'
+import Img1 from '~/assets/images/pared/ParedRevista.jpg';
+import Img2 from '~/assets/images/pared/ParedRevista1.jpg';
+import Img3 from '~/assets/images/pared/ParedRevista2.jpg';
+import Img4 from '~/assets/images/pared/ParedRevista3.jpg';
+
+const galleryImages = [
+  { src: Img1.src, alt: 'Descripción de la imagen 1' },
+  { src: Img2.src, alt: 'Descripción de la imagen 2' },
+  { src: Img3.src, alt: 'Descripción de la imagen 3' },
+  { src: Img4.src, alt: 'Descripción de la imagen 4' },
+];
 
 const metadata = {
   title: 'Calendarios revista pared',
 };
 ---
-
 <Layout metadata={metadata}>
   <!-- Hero2 Widget ******************* -->
 
@@ -21,19 +29,7 @@ const metadata = {
       { variant: 'primary', text: 'Pide tu oferta!', href: 'contacto', icon: 'tabler:square-rounded-arrow-right' },
       { text: 'Saber más', href: '#' },
     ]}
-    image={{
-      src: ParedRevista,
-      alt: 'Store with a Coming Soon sign. Pre-launch Landing Page',
-    }}
+    galleryImages={galleryImages}
   />
-  <Table
-    id="priceCalEspiral"
-    title="Lista de precios especiales"
-    tagline="calendario para pared con espiral"
-    price1 ="330 €"
-    price2 = "523 €"
-    price3 = "919 €"
-    price4 = "1.528 €"
-    price5 =  "1.884 €"
-/>  
+ 
 </Layout>
